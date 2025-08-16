@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+msg_file=$1
+msg=$(cat "$msg_file")
+
+if ! [[ $msg =~ ^(feat|fix|chore|docs|test|refactor): ]]; then
+  echo "❌ Commit message must start with feat|fix|chore|docs|test|refactor"
+  exit 1
+fi
